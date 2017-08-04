@@ -1,23 +1,10 @@
-import React, { Component } from 'react';
-
-class Search extends Component {
-  handleSubmit(event) {
-    event.preventDefault();
-  }
-
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="type track name here.." />
-      </form>
-    );
-  }
-}
+import React from 'react';
+import Search from './Search';
 
 const Header = () => (
-  <header>
+  <header className="header">
     <div className="wrap">
-      <div className="logo">Logo.jpg</div>
+      <div className="header__logo">Logo.jpg</div>
       <Search />
     </div>
   </header>
