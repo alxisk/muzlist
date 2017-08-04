@@ -14,5 +14,6 @@
     "no-prototype-builtins": 0,
     "radix": [2, "as-needed"],
     "no-use-before-define": [2, { "functions": false }],
+    "jsx-a11y/media-has-caption": 0,
   }
 }
