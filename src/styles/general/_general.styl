@@ -1,0 +1,32 @@
+html, body
+  margin: 0
+  padding: 0
+
+html
+  box-sizing: border-box
+
+*, *:before, *:after
+  box-sizing: inherit
+
+body
+  font-family: $font
+
+ul
+  padding-left: 0
+  list-style: none
+
+input
+  border: none
+  outline: none
+
+.wrap
+  margin: 0 auto
+  padding-left: 10px
+  padding-right: 10px
+  max-width: 900px
+
+  @media mq-sm
+    width: 100%
+
+.input
+  border: 1px solid $main
