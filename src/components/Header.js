@@ -3,8 +3,10 @@ import Search from './Search';
 
 const Header = () => (
   <header className="header">
-    <div className="wrap">
-      <div className="header__logo">Logo.jpg</div>
+    <div className="wrap header__wrap">
+      <div className="header__logo">
+        <p>Muzlist</p>
+      </div>
       <Search />
     </div>
   </header>
