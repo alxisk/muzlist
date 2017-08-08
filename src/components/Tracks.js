@@ -4,19 +4,20 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setNowPlaying } from '../actions';
 
-const Track = ({ permalink, stream_url, artwork_url, onClick }) => (
+const Track = ({ title, stream_url, artwork_url, onClick }) => (
 /* eslint-disable camelcase */
-  <li class="track">
+  <li className="track">
     <div
+      className="track__wrap"
       onClick={onClick}
       data-stream={stream_url}
       role="button"
       tabIndex="-1"
     >
       <div className="track__img">
-        <img src={artwork_url} alt={permalink} />
+        <img src={artwork_url} alt={title} />
       </div>
-      <p className="track__title">{permalink}</p>
+      <p className="track__title">{title}</p>
     </div>
   </li>
 /* eslint-enable camelcase */
@@ -46,17 +47,19 @@ class Tracks extends Component {
   render() {
     const tracks = this.props.tracks.length ? this.props.tracks : this.state.tracks;
     return (
-      <div className="wrap">
-        <ul>
-          {tracks.map(item => (
-            <Track
-              key={item.id}
-              onClick={this.playTrack}
-              {...item}
-            />
-          ))}
-        </ul>
-      </div>
+      <section className="tracks">
+        <div className="wrap">
+          <ul className="tracks__list">
+            {tracks.map(item => (
+              <Track
+                key={item.id}
+                onClick={this.playTrack}
+                {...item}
+              />
+            ))}
+          </ul>
+        </div>
+      </section>
     );
   }
 }
@@ -79,7 +82,7 @@ Tracks.propTypes = {
 };
 
 Track.propTypes = {
-  permalink: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   stream_url: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 };
