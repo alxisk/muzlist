@@ -18,9 +18,15 @@ class Search extends Component {
 
   render() {
     return (
-      <form className="search" onSubmit={this.handleSubmit}>
-        <input type="text" ref={(input) => { this.searchInput = input; }} placeholder="type track name here.." />
-      </form>
+      <div className="search">
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            className="input search__input"
+            ref={(input) => { this.searchInput = input; }}
+            placeholder="type track name here.." />
+        </form>
+      </div>
     );
   }
 }
