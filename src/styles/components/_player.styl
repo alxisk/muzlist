@@ -1,0 +1,100 @@
+.player
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+  border-top: 1px solid $black
+  color: $main
+  background: lighten($dark, 10%)
+  z-index: 1000
+
+  &__wrap
+    position: relative
+
+  &__track-title
+    position: absolute
+    top: 5px
+    left: 15%
+    font-size: 12px
+    line-height: 12px
+
+  &__controls
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-left: 1%
+    padding-right: 1%
+
+  &__btn-play
+    display: none
+    position: relative
+    flex: 0 1 auto
+    padding: 0
+    width: 30px
+    height: 30px
+    background: $main
+
+    &:after
+      position: absolute
+      display: block
+      content: "▶"
+      top: 2px
+      left: 8px
+      font-family: $font
+      font-size: 22px
+      line-height: 22px
+      color: $dark
+
+    &--active
+      display: inline-block
+
+  &__btn-pause
+    @extend .player__btn-play
+
+    &:after
+      content: "⏸"
+      top: 1px
+      left: 6px
+      font-size: 24px
+      line-height: 24px
+
+    &--active
+      display: inline-block
+
+  &__btn-mute
+    @extend .player__btn-play
+    display: inline-block
+
+    &:after
+      content: "🔊"
+      top: 3px
+      left: 4px
+
+    &--active:after
+      content: "🔇"
+      left: 6px
+
+  &__time
+    flex: 0 1 auto
+    font-size: 18px
+    line-height: 24px
+
+  &__time-slider
+    flex: 0 1 80%
+    margin-top: 30px
+    margin-bottom: 20px
+    margin-left: 2%
+    margin-right: 2%
+
+  &__volume-slider-container
+    position: absolute
+    display: none
+    top: -46px
+    right: -3.5%
+    padding: 20px 10px
+    border: 1px solid $black
+    border-radius: 4px
+    background: lighten($dark, 10%)
+
+  &__volume-slider
+    width: 100px
