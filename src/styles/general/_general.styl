@@ -29,6 +29,17 @@ input
   @media mq-sm
     width: 100%
 
+.btn
+  padding-top: 4px
+  padding-bottom: 5px
+  padding-left: 10px
+  padding-right: 10px
+  border: none
+  border-radius: 2px
+  font-family: $font
+  outline: none
+  cursor: pointer
+
 .input
   padding-top: 7px
   padding-bottom: 7px
@@ -38,3 +49,41 @@ input
   border-radius: 3px
   font-family: $font
   background: $white
+
+.input-range
+  position: relative
+
+  &__label
+    display: none
+
+  &__track
+    height: 4px
+    border-radius: 2px
+    cursor: pointer
+
+    &--background
+      background: $black
+
+    &--active
+      transition: width 0.3s
+      background: $main
+
+  &__slider
+    position: absolute
+    top: -11px
+    margin-left: -10px
+    width: 17px
+    height: 17px
+    border: 4px solid $white
+    border-radius: 50%
+    background: $black
+    cursor: pointer
+    transition: background-color 0.2s,
+                border-color 0.2s
+
+    &:hover, &:active
+      border-color: lighten($main, 20%)
+      background: $dark
+
+  &__slider-container
+    transition: left 0.3s

@@ -24,7 +24,8 @@ class Search extends Component {
             type="text"
             className="input search__input"
             ref={(input) => { this.searchInput = input; }}
-            placeholder="type track name here.." />
+            placeholder="type track name here.."
+          />
         </form>
       </div>
     );

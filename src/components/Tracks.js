@@ -4,13 +4,12 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setNowPlaying } from '../actions';
 
-const Track = ({ title, stream_url, artwork_url, onClick }) => (
+const Track = ({ title, artwork_url, stream_url, duration, onClick }) => (
 /* eslint-disable camelcase */
   <li className="track">
     <div
       className="track__wrap"
-      onClick={onClick}
-      data-stream={stream_url}
+      onClick={() => onClick({ title, stream_url, duration })}
       role="button"
       tabIndex="-1"
     >
@@ -39,8 +38,7 @@ class Tracks extends Component {
       );
   }
 
-  playTrack(event) {
-    const track = event.target.getAttribute('data-stream');
+  playTrack(track) {
     this.props.setNowPlaying(track);
   }
 
@@ -84,6 +82,8 @@ Tracks.propTypes = {
 Track.propTypes = {
   title: PropTypes.string.isRequired,
   stream_url: PropTypes.string.isRequired,
+  artwork_url: PropTypes.string.isRequired,
+  duration: PropTypes.number.isRequired,
   onClick: PropTypes.func.isRequired,
 };
 
