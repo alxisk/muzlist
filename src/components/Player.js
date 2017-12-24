@@ -89,9 +89,7 @@ class Player extends Component {
   }
 
   render() {
-    const trackTitle = this.props.track.title
-    const trackUrl = this.props.track.stream_url
-    const duration = this.props.track.duration
+    const { title: trackTitle, stream_url: trackUrl, duration } = this.props.track
 
     return (
       <section className="player">
