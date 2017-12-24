@@ -1,5 +1,5 @@
-import React from 'react';
-import Search from './Search';
+import React from 'react'
+import Search from './Search'
 
 const Header = () => (
   <header className="header">
@@ -10,6 +10,6 @@ const Header = () => (
       <Search />
     </div>
   </header>
-);
+)
 
-export default Header;
+export default Header

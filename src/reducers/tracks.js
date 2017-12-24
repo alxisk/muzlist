@@ -1,10 +1,10 @@
-import * as actionTypes from '../constants/actionTypes';
+import * as actionTypes from '../constants/actionTypes'
 
 const initialState = {
   isFetching: false,
   trackList: [],
-  nowPlaying: '',
-};
+  nowPlaying: {},
+}
 
 export default function search(state = initialState, action) {
   switch (action.type) {
@@ -12,21 +12,20 @@ export default function search(state = initialState, action) {
       return {
         ...state,
         isFetching: false,
-      };
+      }
     case actionTypes.TRACKS_FETCH_SUCCESS:
       return {
         ...state,
         trackList: action.tracks,
-      };
+      }
     case actionTypes.TRACKS_FETCH_FAIL:
-      console.error(action.error);
-      return state;
+      return state
     case actionTypes.SET_NOW_PLAYING:
       return {
         ...state,
         nowPlaying: action.track,
-      };
+      }
     default:
-      return state;
+      return state
   }
 }

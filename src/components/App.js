@@ -1,7 +1,7 @@
-import React from 'react';
-import Header from './Header';
-import Tracks from './Tracks';
-import Player from './Player';
+import React from 'react'
+import Header from './Header'
+import Tracks from './Tracks'
+import Player from './Player'
 
 const App = () => (
   <div className="outer-wrap">
@@ -9,6 +9,6 @@ const App = () => (
     <Player />
     <Tracks />
   </div>
-);
+)
 
-export default App;
+export default App
