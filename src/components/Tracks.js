@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { setNowPlaying } from '../actions'
+import { requestTracks, setNowPlaying } from '../actions'
 
 /* eslint-disable camelcase */
 const Track = ({ title, artwork_url, stream_url, duration, onClick }) => (
@@ -32,10 +32,7 @@ class Tracks extends Component {
   }
 
   componentDidMount() {
-    SC.get('/tracks') // eslint-disable-line no-undef
-      .then(tracks => {
-        this.setState({ tracks })
-      })
+    this.props.requestTracks()
   }
 
   playTrack(track) {
@@ -61,12 +58,14 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
+  requestTracks: bindActionCreators(requestTracks, dispatch),
   setNowPlaying: bindActionCreators(setNowPlaying, dispatch),
 })
 
 Tracks.propTypes = {
   tracks: PropTypes.arrayOf(PropTypes.object).isRequired,
   setNowPlaying: PropTypes.func.isRequired,
+  requestTracks: PropTypes.func.isRequired,
 }
 
 Track.defaultProps = {
