@@ -1,7 +1,7 @@
 import * as actionTypes from '../constants/actionTypes'
 
 export const requestTracks = query => ({
-  type: actionTypes.REQUEST_TRACKS,
+  type: actionTypes.TRACKS_FETCH_REQUEST,
   query,
 })
 

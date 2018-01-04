@@ -8,7 +8,7 @@ const initialState = {
 
 export default function search(state = initialState, action) {
   switch (action.type) {
-    case actionTypes.REQUEST_TRACKS:
+    case actionTypes.TRACKS_FETCH_REQUEST:
       return {
         ...state,
         isFetching: false,

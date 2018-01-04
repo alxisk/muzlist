@@ -12,5 +12,5 @@ export function* fetchTracks(action) {
 }
 
 export function* watchFetchTracks() {
-  yield takeEvery(actionTypes.REQUEST_TRACKS, fetchTracks)
+  yield takeEvery(actionTypes.TRACKS_FETCH_REQUEST, fetchTracks)
 }
