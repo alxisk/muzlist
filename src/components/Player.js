@@ -17,6 +17,7 @@ class Player extends Component {
       lastTrack: null,
       muted: false,
       volume: 50,
+      isVolumeSliderVisible: false,
     }
 
     this.play = this.play.bind(this)
@@ -132,8 +133,24 @@ class Player extends Component {
                 'player__btn-mute--active': this.state.muted,
               })}
               onClick={this.mute}
+              onMouseEnter={() => {
+                this.setState({ isVolumeSliderVisible: true })
+              }}
+              onMouseLeave={() => {
+                this.setState({ isVolumeSliderVisible: false })
+              }}
             />
-            <div className="player__volume-slider-container">
+            <div
+              className={classNames('player__volume-slider-container', {
+                'player__volume-slider-container--active': this.state.isVolumeSliderVisible,
+              })}
+              onMouseEnter={() => {
+                this.setState({ isVolumeSliderVisible: true })
+              }}
+              onMouseLeave={() => {
+                this.setState({ isVolumeSliderVisible: false })
+              }}
+            >
               <InputRange
                 classNames={{
                   ...DEFAULT_CLASS_NAMES,
